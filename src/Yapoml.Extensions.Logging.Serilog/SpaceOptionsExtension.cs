@@ -2,7 +2,7 @@
 using Yapoml.Extensions.Logging.Serilog;
 using Yapoml.Options;
 
-namespace Yapoml.Selenium
+namespace Yapoml
 {
     public static class SpaceOptionsExtension
     {
