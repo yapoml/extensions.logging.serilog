@@ -1,6 +1,6 @@
 ﻿using Serilog;
 using Yapoml.Extensions.Logging.Serilog;
-using Yapoml.Options;
+using Yapoml.Framework.Options;
 
 namespace Yapoml
 {
@@ -8,14 +8,14 @@ namespace Yapoml
     {
         public static ISpaceOptions UseSerilog(this ISpaceOptions spaceOptions)
         {
-            spaceOptions.Register<Yapoml.Logging.ILogger>(new SerilogAdapter(Log.Logger));
+            spaceOptions.Register<Framework.Logging.ILogger>(new SerilogAdapter(Log.Logger));
 
             return spaceOptions;
         }
 
         public static ISpaceOptions UseSerilog(this ISpaceOptions spaceOptions, ILogger logger)
         {
-            spaceOptions.Register<Yapoml.Logging.ILogger>(new SerilogAdapter(logger));
+            spaceOptions.Register<Framework.Logging.ILogger>(new SerilogAdapter(logger));
 
             return spaceOptions;
         }

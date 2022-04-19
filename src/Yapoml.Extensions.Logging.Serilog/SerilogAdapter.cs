@@ -2,7 +2,7 @@
 
 namespace Yapoml.Extensions.Logging.Serilog
 {
-    public class SerilogAdapter : Yapoml.Logging.ILogger
+    public class SerilogAdapter : Framework.Logging.ILogger
     {
         private readonly ILogger _logger;
 
