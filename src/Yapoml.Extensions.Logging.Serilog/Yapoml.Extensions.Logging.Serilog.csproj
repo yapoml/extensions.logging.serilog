@@ -2,6 +2,15 @@
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
+
+		<Description>Log adapter for Yapoml log messages</Description>
+		<Authors>Nikolay Borisenko</Authors>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://yapoml.github.io</PackageProjectUrl>
+		<PackageIcon>Logo.png</PackageIcon>
+		<RepositoryType>GitHub</RepositoryType>
+		<RepositoryUrl>https://github.com/yapoml/extensions.logging.serilog</RepositoryUrl>
+		<PackageTags>page generation log serilog</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -12,7 +21,11 @@
 
 		<PackageReference Include="Serilog" Version="2.10.0" />
 
-		<PackageReference Include="Yapoml.Framework" Version="0.1.0-alpha.61" />
+		<PackageReference Include="Yapoml.Framework" Version="0.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\Logo.png" Pack="true" PackagePath="\" Visible="false" />
 	</ItemGroup>
 
 </Project>
