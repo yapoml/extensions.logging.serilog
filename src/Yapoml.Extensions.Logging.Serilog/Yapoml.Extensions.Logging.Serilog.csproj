@@ -21,7 +21,7 @@
 
 		<PackageReference Include="Serilog" Version="2.10.0" />
 
-		<PackageReference Include="Yapoml.Framework" Version="0.2.0" />
+		<PackageReference Include="Yapoml.Framework" Version="0.3.0-alpha.10" />
 	</ItemGroup>
 
 	<ItemGroup>
