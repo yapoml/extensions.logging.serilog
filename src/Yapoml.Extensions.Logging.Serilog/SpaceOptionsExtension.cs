@@ -8,14 +8,18 @@ namespace Yapoml
     {
         public static ISpaceOptions UseSerilog(this ISpaceOptions spaceOptions)
         {
-            spaceOptions.Services.Register<Framework.Logging.ILogger>(new SerilogAdapter(Log.Logger));
+            var serilogAdapter = new SerilogAdapter(Log.Logger);
+
+            serilogAdapter.Initialize(spaceOptions.Services.Get<Framework.Logging.ILogger>());
 
             return spaceOptions;
         }
 
-        public static ISpaceOptions UseSerilog(this ISpaceOptions spaceOptions, ILogger logger)
+        public static ISpaceOptions UseSerilog(this ISpaceOptions spaceOptions, ILogger serilogLogger)
         {
-            spaceOptions.Services.Register<Framework.Logging.ILogger>(new SerilogAdapter(logger));
+            var serilogAdapter = new SerilogAdapter(serilogLogger);
+
+            serilogAdapter.Initialize(spaceOptions.Services.Get<Framework.Logging.ILogger>());
 
             return spaceOptions;
         }
