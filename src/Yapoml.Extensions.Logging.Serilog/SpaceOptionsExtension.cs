@@ -6,7 +6,7 @@ namespace Yapoml
 {
     public static class SpaceOptionsExtension
     {
-        public static ISpaceOptions UseSerilog(this ISpaceOptions spaceOptions)
+        public static ISpaceOptions WithSerilog(this ISpaceOptions spaceOptions)
         {
             var serilogAdapter = new SerilogAdapter(Log.Logger);
 
@@ -15,9 +15,9 @@ namespace Yapoml
             return spaceOptions;
         }
 
-        public static ISpaceOptions UseSerilog(this ISpaceOptions spaceOptions, ILogger serilogLogger)
+        public static ISpaceOptions WithSerilog(this ISpaceOptions spaceOptions, ILogger logger)
         {
-            var serilogAdapter = new SerilogAdapter(serilogLogger);
+            var serilogAdapter = new SerilogAdapter(logger);
 
             serilogAdapter.Initialize(spaceOptions.Services.Get<Framework.Logging.ILogger>());
 
