@@ -2,7 +2,7 @@
 using Yapoml.Extensions.Logging.Serilog;
 using Yapoml.Framework.Options;
 
-namespace Yapoml
+namespace Yapoml.Extensions
 {
     public static class SpaceOptionsExtension
     {
