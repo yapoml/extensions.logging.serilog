@@ -8,18 +8,22 @@ namespace Yapoml.Extensions
     {
         public static ISpaceOptions WithSerilog(this ISpaceOptions spaceOptions)
         {
-            var serilogAdapter = new SerilogAdapter(Log.Logger);
+            var logger = spaceOptions.Services.Get<Framework.Logging.ILogger>();
 
-            serilogAdapter.Initialize(spaceOptions.Services.Get<Framework.Logging.ILogger>());
+            var serilogAdapter = new SerilogAdapter(logger, Log.Logger);
+
+            spaceOptions.Services.Register(serilogAdapter);
 
             return spaceOptions;
         }
 
-        public static ISpaceOptions WithSerilog(this ISpaceOptions spaceOptions, ILogger logger)
+        public static ISpaceOptions WithSerilog(this ISpaceOptions spaceOptions, ILogger serilogLogger)
         {
-            var serilogAdapter = new SerilogAdapter(logger);
+            var logger = spaceOptions.Services.Get<Framework.Logging.ILogger>();
 
-            serilogAdapter.Initialize(spaceOptions.Services.Get<Framework.Logging.ILogger>());
+            var serilogAdapter = new SerilogAdapter(logger, serilogLogger);
+
+            spaceOptions.Services.Register(serilogAdapter);
 
             return spaceOptions;
         }
